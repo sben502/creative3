@@ -26,7 +26,7 @@ document.getElementById('button').onclick = function() {
             image += json.meals[i].strMealThumb + ">";
             instructions += json.meals[i].strInstructions + "</p>";
             youtubeLink += json.meals[i].strYoutube + ">Youtube Video For Making This Meal</a>";
-            source += json.meals[i].strSource + ">Click Here for Ingredients, Measuremnts, and More Information</a>";
+            source += json.meals[i].strSource + ">Click Here for Ingredients, Measurements, and More Information</a>";
         }
         document.getElementById('name').innerHTML = name;
         document.getElementById('catMeal').innerHTML = category;
