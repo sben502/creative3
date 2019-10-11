@@ -13,6 +13,7 @@ document.getElementById('button').onclick = function() {
     var instructions = "<p> <br> Follow Instructions Below: <br>";
     var youtubeLink = "<a href=";
     var source = "<a href=";
+    var id = "<p> Meal ID: ";
        fetch(url)
     .then(function(reponse){
         return reponse.json();
@@ -25,8 +26,9 @@ document.getElementById('button').onclick = function() {
             area += "<i>" + json.meals[i].strArea + "</i></p>";
             image += json.meals[i].strMealThumb + ">";
             instructions += json.meals[i].strInstructions + "</p>";
-            youtubeLink += json.meals[i].strYoutube + ">Youtube Video For Making This Meal</a>";
+            youtubeLink += json.meals[i].strYoutube + ">Youtube Video For Making This Meal</a><br>";
             source += json.meals[i].strSource + ">Click Here for Ingredients, Measurements, and More Information</a>";
+            id +=json.meals[i].idMeal + "</p>";
         }
         document.getElementById('name').innerHTML = name;
         document.getElementById('catMeal').innerHTML = category;
@@ -35,6 +37,7 @@ document.getElementById('button').onclick = function() {
         document.getElementById('instructions').innerHTML = instructions;
         document.getElementById('source').innerHTML = source;
         document.getElementById('youtube').innerHTML = youtubeLink;
+        document.getElementById('idMeal').innerHTML = id;
         
     });
     
