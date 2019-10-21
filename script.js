@@ -1,7 +1,29 @@
 var dt = new Date();
 document.getElementById("date").innerHTML = dt.toLocaleString();
 
-
+let app = new Vue({
+  el: '#app',
+  data: {
+    number:0,
+    addedName: '',
+    addedComment: '',
+    comments: {
+      time: ''
+    },
+  },
+  methods: {
+     addComment() {
+    Vue.set(app.comments, number, new Array);
+      this.comments[number].push({
+        author: this.addedName,
+        text: this.addedComment,
+        time:moment().format('MMMM Do YYYY, h:mm:ss a')
+      });
+      this.addedName = '';
+      this.addedComment = '';
+    },
+  },
+});
 
 /* global fetch*/
 document.getElementById('button').onclick = function() {
@@ -40,6 +62,4 @@ document.getElementById('button').onclick = function() {
         document.getElementById('idMeal').innerHTML = id;
         
     });
-    
-    
 };
