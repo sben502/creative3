@@ -5,15 +5,16 @@ document.getElementById("date").innerHTML = dt.toLocaleString();
 let app = new Vue({
   el: '#app',
   data: {
-    number:0,
+    number:'',
     addedName: '',
     addedComment: '',
     comments: {
       time: ''
     },
   },
+ 
   methods: {
-     addComment() {
+    async addComment() {
     Vue.set(app.comments, this.number, new Array);
       this.comments[this.number].push({
         author: this.addedName,
