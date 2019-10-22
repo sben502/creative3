@@ -1,3 +1,4 @@
+/*global Vue*/
 var dt = new Date();
 document.getElementById("date").innerHTML = dt.toLocaleString();
 
@@ -13,8 +14,8 @@ let app = new Vue({
   },
   methods: {
      addComment() {
-    Vue.set(app.comments, number, new Array);
-      this.comments[number].push({
+    Vue.set(app.comments, this.number, new Array);
+      this.comments[this.number].push({
         author: this.addedName,
         text: this.addedComment,
         time:moment().format('MMMM Do YYYY, h:mm:ss a')
