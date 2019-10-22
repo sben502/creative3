@@ -5,21 +5,19 @@ document.getElementById("date").innerHTML = dt.toLocaleString();
 let app = new Vue({
   el: '#app',
   data: {
-    number:'',
+    number:0,
     addedName: '',
     addedComment: '',
-    comments: {
-      time: ''
-    },
+    comments: {},
   },
- 
   methods: {
     async addComment() {
-    Vue.set(app.comments, this.number, new Array);
+      if (!(this.number in this.comments))
+        Vue.set(app.comments, this.number, new Array);
       this.comments[this.number].push({
         author: this.addedName,
         text: this.addedComment,
-        time:moment().format('MMMM Do YYYY, h:mm:ss a')
+        time: moment().format('MMMM Do YYYY, h:mm:ss a')
       });
       this.addedName = '';
       this.addedComment = '';
