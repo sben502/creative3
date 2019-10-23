@@ -1,3 +1,6 @@
+var dt = new Date();
+document.getElementById("date").innerHTML = dt.toLocaleString();
+
 /* global Vue*/
 var app = new Vue({
   el: '#app',
@@ -43,5 +46,3 @@ var app = new Vue({
     },
 });
 
-var dt = new Date();
-document.getElementById("date").innerHTML = dt.toLocaleString();
