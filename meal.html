@@ -41,11 +41,11 @@
       <br>
         <h1 class = "BlogName">A Blend Of Sweet</h1>
         <h2 id = "titleOfPage">WHAT'S THE MEAL OF THE DAY?</h2>
-        <h3 id = "date">19, September 2019 | 9:28 PM</h3>
+        <div id = "app">
+        <h3 id = "date" v-model="getTime"></h3>
         <br>
         <br>
       <hr>
-      <div id = "app">
       <div class ="textStyle">
           <button v-on:click="fetchREST">Generate Meal of the Day</button>
           <h2><b>{{ current.strMeal}}</b></h2>
