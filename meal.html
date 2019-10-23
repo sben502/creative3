@@ -45,17 +45,20 @@
         <br>
         <br>
       <hr>
+      <div id = "app">
       <div class ="textStyle">
-          <input id="button" type="submit" name="button" value="Generate Your Meal"/>
-          <div id = "name"></div>
-          <div id = "catMeal"></div>
-          <div id = "area"></div>
-          <div id = "image"></div>
-          <div id = "instructions"></div>
-          <div id = "source"></div>
-          <div id = "youtube"></div>
-          <div id ="idMeal"></div>
-
+          <button v-on:click="fetchREST">Generate Meal of the Daty</button>
+          <div v-bind:class = "name">{{ meal.name }}</div>
+          <div v-bind:class = "catMeal">{{ meal.catMeal }}</div>
+          <div v-bind:class = "area">{{ meal.area }}</div>
+          <img v-bind:src="image">
+          <div v-bind:class = "instructions">{{ meal.instructions }}</div>
+          <div v-bind:class = "source">{{ meal.source}}</div>
+          <a v-bind:href="source"> ... </a>
+          <a v-bind:href="youtube"> ... </a>
+          <div v-bind:class = "idMeal">{{ meal.idMeall }}</div>
+      </div>
+      </div>
       </div>
       <hr>
       <div id = "addressbody">
@@ -70,6 +73,7 @@
   </div>
   </div>
   <!-- Interactive java script code for website -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src ="./script.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

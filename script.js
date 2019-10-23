@@ -1,18 +1,42 @@
-var dt = new Date();
-document.getElementById("date").innerHTML = dt.toLocaleString();
-
-let app = new Vue({
+/* global Vue*/
+var app = new Vue({
   el: '#app',
   data: {
     number:0,
     addedName: '',
     addedComment: '',
     comments: {
-      time: ''
+    time: '',
+    name:'',
+    catMeal:'',
+    area:'',
+    image:'',
+    instructions:'',
+    source:'',
+    youtube:'',
+    idMeal:''
     },
   },
   methods: {
-     addComment() {
+      
+      async fetchREST() {
+        try {
+          console.log("In Fetch ");
+          const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
+          this.name = {name: meal[i].strMeal};
+          this.catMeal = {catMeal: meal[i].strCategory};
+          this.area = {area: meal[i].strArea};
+          this.image = {image: meal[i].strMealThumb};
+          this.instructions = {instructions: meal[i].strInstructions}; 
+          this.source = {source: meal[i].strSource};
+          this.youtube = {youtube: meal[i].strYoutube};
+          this.idMeal = {idMeal: meal[i].strIdmEAL};
+          console.log("Got Meal");
+          } catch (error) {
+            console.log(error);
+          }
+        },
+    addComment() {
     Vue.set(app.comments, number, new Array);
       this.comments[number].push({
         author: this.addedName,
@@ -24,9 +48,11 @@ let app = new Vue({
     },
   },
 });
+var dt = new Date();
+document.getElementById("date").innerHTML = dt.toLocaleString();
 
 /* global fetch*/
-document.getElementById('button').onclick = function() {
+/*document.getElementById('button').onclick = function() {
     var url = "https://www.themealdb.com/api/json/v1/1/random.php";
     var name = "<br> <h2><strong>";
     var category = "<p> Food Category: ";
@@ -63,3 +89,4 @@ document.getElementById('button').onclick = function() {
         
     });
 };
+*/
