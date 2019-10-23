@@ -1,5 +1,4 @@
 Vue.component('star-rating', VueStarRating.default);
-
 var dt = new Date();
 document.getElementById("date").innerHTML = dt.toLocaleString();
 
@@ -14,7 +13,7 @@ let app = new Vue({
     rating:0
   },
   methods: {
-    setRating(rating){
+    async setRating(rating){
       if (!(this.number in this.ratings))
         Vue.set(this.ratings, this.number, {
           sum: 0,

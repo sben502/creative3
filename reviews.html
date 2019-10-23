@@ -48,7 +48,9 @@
         <div id = "textInReviews">
         <p>Did we love it? Food for thought... </p>
         <p>We tried some of Provo's favourite places and here's what we decided!<br> Feel free to add your rating to ours! </p><hr>
+ <div id="app">
         <h2><ul><a href="https://bombayhouse.com/menu/">Bombay House</a></h2> 
+             <star-rating id="rating" v-bind:increment="0.5" active-color="blue" @rating-selected ="setRating"></star-rating>
                 <div class="container">
                   <div class="row">
                     <div class="col-sm">
@@ -65,6 +67,7 @@
             <p>If you like Indian food, this is the place for you! With mouthwatering choices for all the meatlovers, vegetarians, and gluten-free foodies, you can never go wrong! We are big fans of the chicken coconut kurma, and of course, you can't forget the naan! 
             </ul></p>
             <h2><ul><a href="https://www.chick-fil-a.com/">Chick-Fil-A</a></h2>
+                <star-rating id="rating" v-bind:increment="0.5" active-color="blue" @rating-selected ="setRating"></star-rating>
                 <div class="container">
                   <div class="row">
                     <div class="col-sm">
@@ -81,6 +84,7 @@
             <p>Who doesn't like chicken?! This is the best place to eat any time of the day because they offer both breakfast type meals and larger appetite curbing selections. The Chick-Fil-A sauce completes any chicken-choice on the menu! Our favourite is a toss up between the chicken sandwich with cheese and the chicken bites, we can't get enough of those with a side of fries! 
             </ul></p>
             <h2><ul><a href="https://www.tacobell.com/">Taco Bell</a></h2>
+            <star-rating id="rating" v-bind:increment="0.5" active-color="blue" @rating-selected ="setRating"></star-rating>
                 <div class="container">
                   <div class="row">
                     <div class="col-sm">
@@ -97,6 +101,8 @@
             <p>Classic choice among the student population, Taco Bell offers an assortment of options to crave hunger! Not only are their tacos a classic, but one of our go to items is the chicken quesadilla! 
             </ul></p>
             <h2><ul><a href="https://www.jamba.com/menu">Jamba Juice</a></h2>
+               <star-rating id="rating" v-bind:increment="0.5" active-color="blue" @rating-selected ="setRating"></star-rating>
+
                 <div class="container">
                   <div class="row">
                     <div class="col-sm">
@@ -121,6 +127,8 @@
       </p>
       <a href ="./contact.html"><i>Contact us</i></a>
       </div>
+      </div>
+
       <!-- Github footer-->
   <div class = "footer">
   <a href = "https://github.com/sben502/creative3"><u>GitHub</u></a>
@@ -130,8 +138,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
-  <script src ="./script.js"></script>
+  <script src="./script.js"></script>
 
   </body>
 </html>
