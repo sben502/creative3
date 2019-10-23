@@ -2,7 +2,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    current:{ },
+      current:{},
     showLinks: false,
     number:0,
     addedName: '',
