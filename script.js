@@ -1,4 +1,5 @@
-/*global Vue*/
+Vue.component('star-rating', VueStarRating.default);
+
 var dt = new Date();
 document.getElementById("date").innerHTML = dt.toLocaleString();
 
@@ -9,8 +10,19 @@ let app = new Vue({
     addedName: '',
     addedComment: '',
     comments: {},
+    ratings: {},
+    rating:0
   },
   methods: {
+    setRating(rating){
+      if (!(this.number in this.ratings))
+        Vue.set(this.ratings, this.number, {
+          sum: 0,
+          total: 0
+        });
+      this.ratings[this.number].sum += rating;
+      this.ratings[this.number].total += 1;
+    },
     async addComment() {
       if (!(this.number in this.comments))
         Vue.set(app.comments, this.number, new Array);
@@ -22,6 +34,7 @@ let app = new Vue({
       this.addedName = '';
       this.addedComment = '';
     },
+    
   },
 });
 
